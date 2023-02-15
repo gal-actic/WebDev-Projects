@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<!--script type="text/javascript">
+		function pi(){
+		   return 3.14;
+	    }
+	    function area_circle(r){
+	    	var area=pi()*r*r;
+	    	return area;
+	    }
+	    alert(area_circle(5));
+	</script-->
+</head>
+<body>
+	<!--p id="output" onclick="change_paragraph_text()" onmouseover="change_paragraph_text()">Default text</p>
+	<input onkeyup="change_paragraph_text(this.value)">
+	<script type="text/javascript">
+		function change_paragraph_text(text){
+		document.getElementById("output").innerHTML=text;
+	}
+	</scrip-->
+	<!--img src="coffeecards/coffeecards/latte-image.png" id="myimage" onclick="update_image()"-->
+	<p id="output">Default Text</p>
+	<input id="city">
+	<button onclick="show_temp()">Submit</button>
+	<script type="text/javascript">
+		function show_temp() {
+			document.getElementById("output").style.color = "red";
+			document.getElementById("output").style.fontSize = "20px";
+			city = document.getElementById("city").value;
+			httpRequest = new XMLHttpRequest();
+			url = "https://api.weatherbit.io/v2.0/current?city="+city+"&key=ca67607f6f2d4cd89efd05b65c68f821"
+
+			httpRequest.open("GET",url);
+			httpRequest.send();
+
+			httpRequest.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+					user_data = JSON.parse(this.responseText);
+					document.getElementById("output").innerHTML = user_data.data[0].temp;
+				}
+			}
+		}
+		/*function update_image() {
+			document.getElementById("myimage").src = "coffeecards/coffeecards/mocha-image.png";
+		}*/
+	</script>
+</body>
+</html>
