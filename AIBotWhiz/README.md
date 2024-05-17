@@ -27,7 +27,7 @@ Once AIBotWhiz is up and running, users can interact with it through WhatsApp. T
 
 ## Support
 
-For any questions or assistance regarding AIBotWhiz, please get in touch with our support team at support@aibotwhiz.com.
+For any questions or assistance regarding AIBotWhiz, please get in touch with our support team.
 
 ## Contributing
 
